@@ -5,7 +5,7 @@ set nobackup            " no backups
 set history=100
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set noincsearch		" turn off incremental searching
 set number              " turn on line numbers
 set expandtab           " tabs to spaces
 set smarttab
