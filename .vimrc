@@ -67,6 +67,7 @@ nmap ! :!<Space>
 " beginning/end of line
 noremap B ^
 noremap E $
+noremap p p='[
 
 " because you hold shift too long
 command! Q q
