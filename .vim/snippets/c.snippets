@@ -1,15 +1,15 @@
 # main()
 snippet main
-	int main(int argc, const char *argv[])
+	int main( int argc, const char *argv[] )
 	{
-		${1}
-		return 0;
+	  ${1}
+	  return 0;
 	}
 snippet mainn
-	int main(void)
+	int main( void )
 	{
-		${1}
-		return 0;
+	  ${1}
+	  return 0;
 	}
 # #include <...>
 snippet inc
@@ -43,44 +43,50 @@ snippet once
 	#endif /* end of include guard: $1 */
 # If Condition
 snippet if
-	if (${1:/* condition */}) {
-		${2:/* code */}
+	if( ${1:/* condition */} ) 
+	{
+	  ${2:/* code */}
 	}
 snippet el
-	else {
-		${1}
+	else 
+	{
+	  ${1}
 	}
 # Ternary conditional
-snippet t
-	${1:/* condition */} ? ${2:a} : ${3:b}
+snippet ternary
+	${1:/* TODO */} ? ${2:a} : ${3:b}
 # Do While Loop
 snippet do
 	do {
-		${2:/* code */}
-	} while (${1:/* condition */});
+	  ${2:/* TODO*/}
+	} while( ${1:/* condition */} );
 # While Loop
 snippet wh
-	while (${1:/* condition */}) {
-		${2:/* code */}
+	while( ${1:/* condition */} ) 
+	{
+	  ${2:/* TODO */}
 	}
 # For Loop
 snippet for
-	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
-		${4:/* code */}
+	for( ${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
+	{
+	  ${4:/* TODO */}
 	}
-# Custom For Loop
-snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
-		${5:/* code */}
+# For Loop with the i declaration above
+snippet fori
+	int i;
+	for( ${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
+	{
+	  ${4:/* TODO */}
 	}
 # Function
-snippet fun
+snippet func
 	${1:void} ${2:function_name}(${3})
 	{
-		${4:/* code */}
+	  ${4:/* TODO */}
 	}
 # Function Declaration
-snippet fund
+snippet funcd
 	${1:void} ${2:function_name}(${3});${4}
 # Typedef
 snippet td
@@ -103,11 +109,14 @@ snippet tde
 # printf
 # unfortunately version this isn't as nice as TextMates's, given the lack of a
 # dynamic `...`
-snippet pr
-	printf("${1:%s}\n"${2});${3}
+snippet printf
+	printf( "${1:%s}\n"${2} );${3}
+# my littel shortcut when i like to print out statements when debugging
+snippet phere
+	printf( "here${1}!\n" ); // TODO - delete me!
 # fprintf (again, this isn't as nice as TextMate's version, but it works)
-snippet fpr
-	fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
+snippet fprintf
+	fprintf( ${1:stderr}, "${2:%s}\n"${3} );${4}
 # This is kind of convenient
 snippet .
 	[${1}]${2}
