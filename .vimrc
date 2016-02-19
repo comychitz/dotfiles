@@ -24,6 +24,7 @@ set hlsearch
 set scrolloff=7        " start scrolling when cursor is 7 lines from top/bottom
 set cmdheight=2        " Height of the command bar
 set laststatus=2       " show the status line
+set wildmenu	       " shows command completions in the status bar
 
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ l:%l\ c:%v
