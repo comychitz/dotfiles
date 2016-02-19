@@ -62,13 +62,18 @@ map <leader>tt :tabnext<cr>
 map <leader>bd :bd<cr>
 map <leader>bn :bn<cr>
 map <leader>e  :e
-map <leader>l :NERDTreeToggle
-" run command easier
+map <leader>nt :NERDTreeToggle
+" run a shell command easier
 nmap ! :!<Space>
 " beginning/end of line
 noremap B ^
 noremap E $
+" format indent on space
 noremap p p='[
+" shortcuts for line number setting
+map <leader>rn :set relativenumber
+map <leader>ln :set number
+map <leader>nn :set nonumber
 
 " because you hold shift too long
 command! Q q
