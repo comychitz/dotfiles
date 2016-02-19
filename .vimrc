@@ -71,9 +71,9 @@ noremap E $
 " format indent on space
 noremap p p='[
 " shortcuts for line number setting
-map <leader>rn :set relativenumber
-map <leader>ln :set number
-map <leader>nn :set nonumber
+map <leader>rn :set relativenumber<cr>
+map <leader>ln :set number<cr>
+map <leader>nn :set nonumber<cr>
 
 " because you hold shift too long
 command! Q q
