@@ -70,6 +70,8 @@ noremap B ^
 noremap E $
 " format indent on space
 noremap p p='[
+" create newline without entering insert mode
+map <leader>o o<esc>
 " shortcuts for line number setting
 map <leader>rn :set relativenumber<cr>
 map <leader>ln :set number<cr>
