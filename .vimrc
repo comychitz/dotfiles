@@ -72,6 +72,8 @@ noremap E $
 noremap p p='[
 " create newline without entering insert mode
 map <leader>o o<esc>
+" create a space without entering insert mode
+map <leader><space> i<space><esc>
 " shortcuts for line number setting
 map <leader>rn :set relativenumber<cr>
 map <leader>ln :set number<cr>
