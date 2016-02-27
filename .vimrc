@@ -26,6 +26,7 @@ set cmdheight=2        " Height of the command bar
 set laststatus=2       " show the status line
 set wildmenu	       " shows command completions in the status bar
 set cino=(0	       " turns on multiline indentation (for long functions, etc.)
+set tw=80              " set text width to be 80
 
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ l:%l\ c:%v
@@ -107,8 +108,6 @@ if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
