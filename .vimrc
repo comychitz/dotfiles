@@ -76,6 +76,8 @@ noremap p p='[
 map <leader>o o<esc>
 " create a space without entering insert mode
 map <leader><space> i<space><esc>
+" split line at cursor without entering insert mode
+map <leader><enter> i<enter><esc>
 " shortcuts for line number setting
 map <leader>rn :set relativenumber<cr>
 map <leader>ln :set number<cr>
