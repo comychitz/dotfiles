@@ -99,6 +99,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 " nerdtree stuff
 let NERDTreeShowHidden=1
 
+" cscove (cscope) stuff
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>c :call ToggleLocationList()<CR>
+
 if has('mouse')
   set mouse=a
 endif
