@@ -65,6 +65,7 @@ map <leader>bd :bd<cr>
 map <leader>bn :bn<cr>
 map <leader>e  :e
 map <leader>nt :NERDTreeToggle
+map <leader>tl :TlistToggle
 " run a shell command easier
 nmap ! :!<Space>
 " beginning/end of line
