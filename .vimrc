@@ -42,6 +42,12 @@ hi PmenuSel  ctermfg=black ctermbg=yellow
 hi PmenuSbar ctermfg=blue ctermbg=blue
 hi PmenuThumb ctermfg=blue ctermbg=blue
 
+" vimdiff highlight colors
+hi DiffAdd        ctermfg=black ctermbg=green
+hi DiffChange     ctermfg=black ctermbg=yellow
+hi DiffText       ctermfg=black ctermbg=magenta
+hi DiffDelete     ctermfg=black ctermbg=red
+
 "mappings 
 let mapleader = ";"
 " Pressing ,ss will toggle and untoggle spell checking
