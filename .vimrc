@@ -89,6 +89,8 @@ map <leader><enter> i<enter><esc>
 map <leader>rn :set relativenumber<cr>
 map <leader>ln :set number<cr>
 map <leader>nn :set nonumber<cr>
+" shortcut to search the word the cursor is currently under
+map <leader>s *
 
 " because you hold shift too long
 command! Q q
