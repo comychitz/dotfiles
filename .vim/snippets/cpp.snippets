@@ -7,3 +7,23 @@ snippet class
 	private:
 		${2}
 	};
+
+# cout snippet
+snippet cout
+	std::cout << ${1}
+# cout without the std
+snippet coutnostd
+	cout << ${1}
+
+# consturctor for class
+snippet constructor
+	${1:`Filename('$1', 'name')`}::${2:`Filename('$1', 'name')`}(${3}):${4}
+	{
+	  ${5}
+	}
+# class function
+snippet classfunction
+	${1:`Filename('$1', 'name')`}::${2:`Filename('$1', 'name')`}(${3})
+	{
+	  ${4}
+	}
