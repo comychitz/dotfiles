@@ -43,14 +43,21 @@ snippet once
 	#endif /* end of include guard: $1 */
 # If Condition
 snippet if
-	if( ${1:/* condition */} ) 
+	if (${1:/* condition */}) 
 	{
 	  ${2:/* code */}
 	}
+# else
 snippet el
 	else 
 	{
 	  ${1}
+	}
+# else if
+snippet elif
+	else if (${1:/* condition */})
+	{
+	  ${2:/* TODO */}
 	}
 # Ternary conditional
 snippet ternary
@@ -61,7 +68,7 @@ snippet do
 	  ${2:/* TODO*/}
 	} while( ${1:/* condition */} );
 # While Loop
-snippet wh
+snippet while
 	while( ${1:/* condition */} ) 
 	{
 	  ${2:/* TODO */}
@@ -80,19 +87,32 @@ snippet fori
 	  ${4:/* TODO */}
 	}
 # Function
-snippet func
+snippet function
 	${1:void} ${2:function_name}(${3})
 	{
 	  ${4:/* TODO */}
 	}
+# switch
+snippet switch
+	switch (${1}) 
+	{
+	  case ${2}: {
+	    ${3}
+	    break;
+	  }
+	  default: {
+	    // replace me or erase me!
+	    break;
+	  }
+	}
 # Function Declaration
-snippet funcd
+snippet classfunction
 	${1:void} ${2:function_name}(${3});${4}
 # Typedef
-snippet td
+snippet typdef
 	typedef ${1:int} ${2:MyCustomType};${3}
 # Struct
-snippet st
+snippet struct
 	struct ${1:`Filename('$1_t', 'name')`} {
 		${2:/* data */}
 	}${3: /* optional variable list */};${4}
@@ -124,7 +144,7 @@ snippet .
 snippet /*
 	/* ${1:comment} */
 # function declaration comment snippet
-snippet funcom
+snippet functioncomment
 	/*******************************************************************************
 	 * Description: ${1}
 	 * 
@@ -134,7 +154,7 @@ snippet funcom
 	 ******************************************************************************/
 	 ${4}
 # top of file comment snippet
-snippet filecom
+snippet filecomment
 	/*******************************************************************************
 	* Filename: ${1:`expand('%:t')` }
 	*
@@ -145,5 +165,14 @@ snippet filecom
 	* History: ${4}
 	*******************************************************************************/
 	${5}
-snippet bufoff
+snippet bufferoff
 	setvbuf(stdout, NULL, _IONBF, 0);
+# big comment section like a small function description 
+# or something of that nature
+snippet bigcomment
+	/***
+	 * ${1}
+	 **/
+	 ${2}
+snippet 
+	 
