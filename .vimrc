@@ -45,7 +45,7 @@ hi PmenuThumb ctermfg=blue ctermbg=blue
 " vimdiff highlight colors
 hi DiffAdd        ctermfg=black ctermbg=green
 hi DiffChange     ctermfg=black ctermbg=yellow
-hi DiffText       ctermfg=black ctermbg=yellow
+hi DiffText       ctermfg=blue ctermbg=yellow
 hi DiffDelete     ctermfg=black ctermbg=red
 
 "mappings 
