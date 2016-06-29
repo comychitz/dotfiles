@@ -141,31 +141,27 @@ snippet /*
 	/* ${1:comment} */
 # function declaration comment snippet
 snippet functioncomment
-	/*******************************************************************************
-	 * Description: ${1}
-	 * 
-	 * Inputs: ${2}
-	 * 
-	 * Returns: ${3}
-	 ******************************************************************************/
-	 ${4}
+	 ////////////////////////////////////////////////////////////////////////////////
+	 // 
+	 // ${1}
+	 // 
+	 ////////////////////////////////////////////////////////////////////////////////
 # top of file comment snippet
 snippet filecomment
-	/*******************************************************************************
-	* Filename: ${1:`expand('%:t')` }
-	*
-	* Description: ${2}
-	* 
-	* Notes: ${3}
-	*
-	* History: ${4}
-	*******************************************************************************/
-	${5}
+	////////////////////////////////////////////////////////////////////////////////
+	// 
+	// ${1:`expand('%:t')` }
+	//
+	// ${2}
+	//
+	// History: ${3}
+	//
+	////////////////////////////////////////////////////////////////////////////////
 snippet bufferoff
 	setvbuf(stdout, NULL, _IONBF, 0);
-# big comment section like a small function description 
-# or something of that nature
-snippet bigcomment
-	/***
-	 * ${1}
-	 **/
+# big comment section that stands out a bit more than normal comments
+# use when commenting more important/critical things
+snippet bc
+	//
+	// ${1}
+	//
