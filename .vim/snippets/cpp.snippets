@@ -2,10 +2,15 @@
 snippet class
 	class ${1:`Filename('$1', 'name')`} 
 	{
-	 public:
-		${1} 
-	private:
-		${2}
+	  public:
+	    ${2:`Filename('$1', 'name')`} 
+
+	    ${2:~`Filename('$1', 'name')`} 
+
+	    ${3}
+
+	  private:
+	    ${4}
 	};
 
 # cout snippet
@@ -14,15 +19,8 @@ snippet cout
 # cout without the std
 snippet coutnostd
 	cout << ${1}
-
-# consturctor for class
-snippet constructor
-	${1:`Filename('$1', 'name')`}::${2:`Filename('$1', 'name')`}(${3}):${4}
-	{
-	  ${5}
-	}
-# class function
-snippet classfunction
+# member function
+snippet memberfunction
 	${1:`Filename('$1', 'name')`}::${2:`Filename('$1', 'name')`}(${3})
 	{
 	  ${4}
