@@ -91,6 +91,9 @@ map <leader>ln :set number<cr>
 map <leader>nn :set nonumber<cr>
 " shortcut to search the word the cursor is currently under
 map <leader>s *
+" set mouse click/visual on/off
+map <leader>nm :set mouse=
+map <leader>mn :set mouse=a
 
 " because you hold shift too long
 command! Q q
