@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/true/Desktop/school/uci/compsci 222/project 1/project1-56967608/codebase/rbf'
+let g:netrw_dirhist_2='/Users/true/.vim'
+let g:netrw_dirhist_3='/Users/true/Dropbox/vimmmmm/.vim'
+let g:netrw_dirhist_4='/Users/true/Desktop/projects/dotfiles/.vim'
