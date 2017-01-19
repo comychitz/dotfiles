@@ -108,6 +108,10 @@ let g:syntastic_cpp_checkers = ['cppcheck']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 
+" doxygen highlighting
+let g:doxygen_enhanced_color = 0
+let doxygen_javadoc_autobrief = 0
+
 " nerdtree stuff
 let NERDTreeShowHidden=1
 
@@ -124,7 +128,7 @@ if has("autocmd")
   filetype plugin indent on
   filetype plugin on
   " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
+  augroup vimrcEx 
   au!
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -135,6 +139,12 @@ if has("autocmd")
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+  augroup END
+  augroup vimrc
+  " C, CPP comments
+  autocmd filetype c,cpp setlocal comments-=:// " comments+=f://
+  autocmd filetype c,cpp inoremap <C-f> <CR>//<space>
+  autocmd filetype c,cpp setlocal syntax=cpp.doxygen
   augroup END
 endif " end autocmd stuff
 
