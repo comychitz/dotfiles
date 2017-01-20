@@ -33,4 +33,3 @@ my emacs configuration and related notes
   - tab to cycle through visibility
   - Ctrl-c ctrl-x ctrl-i makes a clock in entry
   - ctrl-c ctrl-x ctrl-o clocks out
-  - 
