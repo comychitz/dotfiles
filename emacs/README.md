@@ -31,5 +31,12 @@ my emacs configuration and related notes
   - use Ctrl-c ctrl-t to toggle TODO state
   - use Ctrl-c ctrl-d to set deadline timestamp
   - tab to cycle through visibility
-  - Ctrl-c ctrl-x ctrl-i makes a clock in entry
+  - shift tab to cycle through visibility of an entire tree
+  - ctrl-c ctrl-x ctrl-i makes a clock in entry
   - ctrl-c ctrl-x ctrl-o clocks out
+  - ctrl-c ctrl-x ctrl-r generates a report
+  - ctrl-c ctrl-x ctrl-u updates a report
+  - ctrl-c ctrl-x ctrl-j jump to latest
+  - ctrl-u ctrl-c ctrl-x ctrl-j show recent tasks & jump to them
+  - ctrl-u ctrl-c ctrl-x ctrl-j i shows the most recently interrupted task
+  - use shift and up/down arrow to adjust time, use shift left/right arrow to adjust day
