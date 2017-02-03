@@ -43,6 +43,7 @@ my emacs configuration and related notes
   * use Ctrl-c ctrl-d to set deadline timestamp
   * tab to cycle through visibility
   * shift tab to cycle through visibility of an entire tree
+  * M-enter to create a new bullet entry
   * ctrl-c ctrl-x ctrl-i makes a clock in entry
   * ctrl-c ctrl-x ctrl-o clocks out
   * ctrl-c ctrl-x ctrl-r generates a report
