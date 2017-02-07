@@ -5,8 +5,8 @@
 #
 #############################################################################
 
-cp ./.bash_prodile ~/
+cp ./.bash_profile ~/
 if [ $? -ne 0 ]; then
-  echo "Failed to copy .emacs to ~/"
+  echo "Failed to copy .bash_profile ~/"
   exit -1
 fi
