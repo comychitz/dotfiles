@@ -10,7 +10,6 @@ Currently, I like to use vim for all my development (which is usually C/C++ on L
 
 ## emacs
 Lately I've been pushing myself to learn emacs, mainly for org-mode. 
-* see emacs/README.md for notes on emacs
 * see emacs/.emacs
 
 ## bash
