@@ -21,13 +21,13 @@
 ;; initial window
 (setq initial-frame-alist
       '(
-        (width . 100) ; character
-        (height . 54) ; lines
+        (width . 120) ; character
+        (height . 60) ; lines
         ))
 
 ;; default/sebsequent window
 (setq default-frame-alist
       '(
-        (width . 100) ; character
-        (height . 52) ; lines
+        (width . 120) ; character
+        (height . 58) ; lines
         ))
