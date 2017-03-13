@@ -3,4 +3,6 @@ My (very infant) emacs configuration. Slowing getting converted to the Dark Side
 
 ## Dependencies
 * [evil-org-mode](https://github.com/edwtjo/evil-org-mode)
-* 
+* [evil-surround](https://github.com/timcharper/evil-surround)
+* [evil-magit](https://github.com/emacs-evil/evil-magit)
+* [auto-complete](https://github.com/auto-complete/auto-complete)
