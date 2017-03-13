@@ -6,3 +6,4 @@ My (very infant) emacs configuration. Slowing getting converted to the Dark Side
 * [evil-surround](https://github.com/timcharper/evil-surround)
 * [evil-magit](https://github.com/emacs-evil/evil-magit)
 * [auto-complete](https://github.com/auto-complete/auto-complete)
+* [flymake-google-cpplint](https://github.com/senda-akiha/flymake-google-cpplint)
