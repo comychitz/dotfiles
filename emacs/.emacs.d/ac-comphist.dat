@@ -1,0 +1,32 @@
+((("semantic-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("se" .
+   [2 0])
+  ("my:flymake-google-cpplint-init" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("dd" .
+   [1 0])
+  ("flymake-google-cpplint" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("flymake-google-cpplint-command" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("custom-set-variables" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("custom-set-faces" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("Custom." .
+   [0 0 0 1 0 0 1])
+  ("defun" .
+   [1 0 0 0 0])
+  ("LyricsDisplayer" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("sstream" .
+   [1 0 0 0 0 0 0])
+  ("include" .
+   [0 0 0 0 0 0 1])
+  ("me" .
+   [1 0])
+  ("m_lyrics" .
+   [0 0 0 1 0 0 0 0])
+  ("m_lyricFiles" .
+   [0 0 0 0 0 0 0 0 1 0 0 0])))
