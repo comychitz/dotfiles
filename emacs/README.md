@@ -7,3 +7,5 @@ My (very infant) emacs configuration. Slowing getting converted to the Dark Side
 * [evil-magit](https://github.com/emacs-evil/evil-magit)
 * [auto-complete](https://github.com/auto-complete/auto-complete)
 * [flymake-google-cpplint](https://github.com/senda-akiha/flymake-google-cpplint)
+  * also need cpplint, can be installed via pip
+  
