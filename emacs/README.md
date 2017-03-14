@@ -8,4 +8,4 @@ My (very infant) emacs configuration. Slowing getting converted to the Dark Side
 * [auto-complete](https://github.com/auto-complete/auto-complete)
 * [flymake-google-cpplint](https://github.com/senda-akiha/flymake-google-cpplint)
   * also need cpplint, can be installed via pip
-  
+  * and install flymake-cursor
