@@ -69,7 +69,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-org-mode")
 (require 'evil-org)
 
-;; for expoting
+;; for exporting
 (require 'ox-md)
 
 ;; find the corresponding file .h/.cpp/* file
