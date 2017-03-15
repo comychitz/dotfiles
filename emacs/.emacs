@@ -9,7 +9,26 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+(setq c-default-style "linux"
+      c-basic-offset 2)
+
+;; make clock history persistent across instance of emacs
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
+;; colorscheme
+(require 'solarized)
+(load-theme'solarized-dark t)
+
+;; paragraph filling/word wrapping
+(setq-default fill-column 80)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'c++-mode-hook 'turn-on-auto-fill)
+(add-hook 'c-mode-hook 'turn-on-auto-fill)
+(global-set-key (kbd "C-c q") 'auto-fill-mode)
+
 ;; evil-mode
+(setq evil-want-C-u-scroll t) ;; to allow Ctrl-u scrolling
 (require 'evil)
 (evil-mode t)
 
@@ -31,6 +50,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ ;;'(initial-buffer-choice "/path/to/default/file/to/open")
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
  '(flymake-google-cpplint-command "/usr/local/bin/cpplint")
  '(package-selected-packages
    (quote
@@ -106,11 +129,38 @@
 (require 'iedit)
 
 ;; google-cpplint
-(defun my:flymake-google-init ()
-  (require 'flymake-google-cpplint)
-  (custom-set-variables
-   '(flymake-google-cpplint-command "/usr/local/bin/cpplint"))
-  (flymake-google-cpplint-load)
- )
-(add-hook 'c++-mode-hook 'my:flymake-google-init)
-(add-hook 'c-mode-hook 'my:flymake-google-init)
+;;(defun my:flymake-google-init ()
+;;  (require 'flymake-google-cpplint)
+;;  (custom-set-variables
+;;   '(flymake-google-cpplint-command "/usr/local/bin/cpplint"))
+;;  (flymake-google-cpplint-load)
+;; )
+;;(add-hook 'c++-mode-hook 'my:flymake-google-init)
+;;(add-hook 'c-mode-hook 'my:flymake-google-init)
+
+
+;; setup support for doxygen color highlighting
+(defun my-cc-init-hook ()
+  "Initialization hook for CC-mode runs before any other hooks."
+  (setq c-doc-comment-style
+    '((java-mode . javadoc)
+      (pike-mode . autodoc)
+      (c-mode    . javadoc)
+      (c++-mode  . javadoc)))
+  (set-face-foreground 'font-lock-doc-face
+               (face-foreground font-lock-comment-face)))
+(add-hook 'c-initialization-hook 'my-cc-init-hook)
+
+;; irony
+(require 'irony)
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+;; replace the `completion-at-point' and `complete-symbol' bindings in
+;; irony-mode's buffers by irony-mode's function
+;;(defun my-irony-mode-hook ()
+;;  (define-key irony-mode-map [remap completion-at-point]
+;;    'irony-completion-at-point-async)
+;;  (define-key irony-mode-map [remap complete-symbol]
+;;    'irony-completion-at-point-async))
+;;(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+;;(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
