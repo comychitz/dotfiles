@@ -12,6 +12,8 @@
 (setq c-default-style "linux"
       c-basic-offset 2)
 
+;; set clock format
+(
 ;; make clock history persistent across instance of emacs
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
@@ -46,10 +48,9 @@
         (height . 58) ; lines
         ))
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+(org-time-clocksum-format
+   (quote
+    (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))))
  ;;'(initial-buffer-choice "/path/to/default/file/to/open")
  '(custom-safe-themes
    (quote
