@@ -198,6 +198,3 @@
 ; turn on automatic reparsing of open buffers in semantic
 (global-semantic-idle-scheduler-mode 1)
 (global-semantic-stickyfunc-mode 1)
-
-;; require which-key
-(require 'which-key)
