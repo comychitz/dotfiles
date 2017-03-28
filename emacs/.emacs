@@ -48,7 +48,7 @@
 	(height . 58) ; lines
 	))
 (custom-set-variables
-'(initial-buffer-choice "~/Desktop/timecards/notes.org")
+'(initial-buffer-choice "~/Desktop/notes.org")
 '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
