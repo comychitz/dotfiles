@@ -1,4 +1,3 @@
-;; Popular repos for packages
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -12,11 +11,12 @@
 (setq c-default-style "linux"
       c-basic-offset 2)
 
-;; set clock format
-(
 ;; make clock history persistent across instance of emacs
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
+;; org-time-clocksum to not include days, just hours ex. 10:00
+(setq org-time-clocksum-format
+   (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
 
 ;; colorscheme
 (require 'solarized)
@@ -37,28 +37,25 @@
 ;; initial window
 (setq initial-frame-alist
       '(
-        (width . 120) ; character
-        (height . 60) ; lines
-        ))
+	(width . 120) ; character
+	(height . 60) ; lines
+	))
 
 ;; default/sebsequent window
 (setq default-frame-alist
       '(
-        (width . 120) ; character
-        (height . 58) ; lines
-        ))
+	(width . 120) ; character
+	(height . 58) ; lines
+	))
 (custom-set-variables
-(org-time-clocksum-format
-   (quote
-    (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))))
- ;;'(initial-buffer-choice "/path/to/default/file/to/open")
- '(custom-safe-themes
+'(initial-buffer-choice "~/Desktop/timecards/notes.org")
+'(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
- '(flymake-google-cpplint-command "/usr/local/bin/cpplint")
- '(package-selected-packages
-   (quote
-    (cedit flymake-cursor google-c-style flymake-google-cpplint auto-complete-c-headers auto-complete yasnippet ## evil-org evil-visual-mark-mode))))
+'(flymake-google-cpplint-command "/usr/local/bin/cpplint")
+'(package-selected-packages
+  (quote
+   (cedit flymake-cursor google-c-style flymake-google-cpplint auto-complete-c-headers auto-complete yasnippet ## evil-org evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -79,9 +76,9 @@
 ;; gtags
 (require 'ggtags)
 (add-hook 'c-mode-common-hook
-          (lambda ()
-            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
-              (ggtags-mode 1))))
+	  (lambda ()
+	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+	      (ggtags-mode 1))))
 (define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
 (define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
 (define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
@@ -95,7 +92,7 @@
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 (add-hook 'c++-mode-hook (lambda ()
-                           (push '(?< . ("< " . " >")) evil-surround-pairs-alist)))
+			   (push '(?< . ("< " . " >")) evil-surround-pairs-alist)))
 
 
 ;; evil-magit
@@ -108,7 +105,7 @@
 
 ;; yasnippets
 (add-to-list 'load-path
-              "~/.emacs.d/plugins/yasnippet")
+	     "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
 
@@ -121,7 +118,7 @@
 (defun my:ac-c-headers-init ()
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
-)
+  )
 
 (add-hook 'c++-mode-hook 'my:ac-c-headers-init)
 (add-hook 'c-mode-hook 'my:ac-c-headers-init)
@@ -144,18 +141,18 @@
 (defun my-cc-init-hook ()
   "Initialization hook for CC-mode runs before any other hooks."
   (setq c-doc-comment-style
-    '((java-mode . javadoc)
-      (pike-mode . autodoc)
-      (c-mode    . javadoc)
-      (c++-mode  . javadoc)))
+	'((java-mode . javadoc)
+	  (pike-mode . autodoc)
+	  (c-mode    . javadoc)
+	  (c++-mode  . javadoc)))
   (set-face-foreground 'font-lock-doc-face
-               (face-foreground font-lock-comment-face)))
+		       (face-foreground font-lock-comment-face)))
 (add-hook 'c-initialization-hook 'my-cc-init-hook)
 
 ;; irony
-(require 'irony)
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
+;;(require 'irony)
+;;add-hook 'c++-mode-hook 'irony-mode)
+;;(add-hook 'c-mode-hook 'irony-mode)
 ;; replace the `completion-at-point' and `complete-symbol' bindings in
 ;; irony-mode's buffers by irony-mode's function
 ;;(defun my-irony-mode-hook ()
@@ -165,3 +162,42 @@
 ;;    'irony-completion-at-point-async))
 ;;(add-hook 'irony-mode-hook 'my-irony-mode-hook)
 ;;(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+;; open a file on startup
+(find-file "~/Desktop/notes.org")
+
+;; Org mode reports should not use \emsp as their indent symbol.
+;; http://emacs.stackexchange.com/questions/9528/
+;; i replaced all chars with spaces, adjust to your liking 
+(defun my-org-clocktable-indent-string (level)
+  (if (= level 1)
+      ""
+    (let ((str " -"))
+      (while (> level 2)
+        (setq level (1- level)
+              str (concat str "--")))
+      (concat str "> "))))
+
+(advice-add 'org-clocktable-indent-string
+            :override #'my-org-clocktable-indent-string)
+
+; semantic
+(semantic-mode 1)
+; let's define a function which adds semantic as a suggestion backend to auto complete
+; and hook this function to c-mode-common-hook
+(defun my:add-semantic-to-autocomplete() 
+  (add-to-list 'ac-sources 'ac-source-semantic)
+)
+(add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
+(add-hook 'c++-mode-hook 'my:add-semantic-to-autocomplete)
+
+; turn on ede mode 
+(global-ede-mode 1)
+
+;; add any system-related include paths for setting up system header file locations
+; turn on automatic reparsing of open buffers in semantic
+(global-semantic-idle-scheduler-mode 1)
+(global-semantic-stickyfunc-mode 1)
+
+;; require which-key
+(require 'which-key)
