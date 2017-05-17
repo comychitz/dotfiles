@@ -84,22 +84,20 @@ snippet fori
 	}
 # Function
 snippet function
-	${1:void} ${2:function_name}(${3})
+	${1:void} ${2:function_name}( ${3} )
 	{
-	  ${4:/* TODO */}
+	  ${4:// TODO}
 	}
 # switch
 snippet switch
-	switch (${1}) 
+	switch( ${1} ) 
 	{
-	  case ${2}: {
+	  case ${2}: 
 	    ${3}
 	    break;
-	  }
-	  default: {
+	  default: 
 	    // replace me or erase me!
 	    break;
-	  }
 	}
 # Function Declaration
 snippet functiondec
@@ -140,23 +138,10 @@ snippet .
 snippet /*
 	/* ${1:comment} */
 # function declaration comment snippet
-snippet functioncomment
-	////////////////////////////////////////////////////////////////////////////////
-	// 
-	// ${1}
-	// 
-	////////////////////////////////////////////////////////////////////////////////
-# top of file comment snippet
-snippet filecomment
-	////////////////////////////////////////////////////////////////////////////////
-	// 
-	// ${1:`expand('%:t')` }
-	//
-	// ${2}
-	//
-	// History: ${3}
-	//
-	////////////////////////////////////////////////////////////////////////////////
+snippet fc
+	/**
+	 * ${1}
+	 */
 snippet bufferoff
 	setvbuf(stdout, NULL, _IONBF, 0);
 # big comment section that stands out a bit more than normal comments
@@ -165,3 +150,6 @@ snippet bc
 	//
 	// ${1}
 	//
+# todo 
+snippet td
+	// TODO ${1}
