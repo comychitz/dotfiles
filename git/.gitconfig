@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[push]
+        default = simple
+[user]
+        name = Cam
+        email = email@email.none
+[diff]
+        tool = vimdiff
+[difftool]
+        prompt = true
+[alias]
+        d = difftool
