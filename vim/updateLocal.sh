@@ -7,10 +7,10 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 VIM_DIR=$HOME/.vim
 
-#cp ./.vimrc  ~/
+cp ./.vimrc  ~/
 if [ $? -ne 0 ]; then
   echo "Failed to copy .vimrc to ~/"
-  #exit -1
+  exit -1
 fi
 
 # init ~/.vimrc file ##############################################
