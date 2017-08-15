@@ -5,8 +5,21 @@
 #
 #############################################################################
 
-cp ./.bash_profile ~/
-if [ $? -ne 0 ]; then
-  echo "Failed to copy .bash_profile ~/"
-  exit -1
+#cp ./.bash_profile ~/
+
+# source this .bash_profile into ~/.bash_profile
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+HOME_BASHRC=$HOME/.bash_profile
+CUSTOM_BASHRC=$SCRIPT_DIR/.bash_profile
+
+if [ ! -f $HOME_BASHRC ]; then
+    touch $HOME_BASHRC
 fi
+
+SOURCE_MSG=". $CUSTOM_BASHRC"
+if ! grep -q "$SOURCE_MSG" "$HOME_BASHRC"; then
+    echo "# custom bash_profile added" >> $HOME_BASHRC
+    echo "$SOURCE_MSG" >> $HOME_BASHRC
+fi
+
+
