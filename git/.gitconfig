@@ -1,12 +1,30 @@
-# This is Git's per-user configuration file.
-[push]
-        default = simple
 [user]
-        name = Cam
-        email = email@email.none
-[diff]
-        tool = vimdiff
-[difftool]
-        prompt = true
+	name = Cameron Chitsaz
+	email = camcorder09@gmail.com
+[push]
+	default = simple
+
 [alias]
-        d = difftool
+	d = difftool
+        change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+
+[diff]
+	tool = vimdiff
+
+[diff]
+    tool = meld
+[difftool]
+    prompt = true
+[difftool "meld"]
+    trustExitCode = true
+      cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+[merge]
+    tool = meld
+[mergetool]
+    prompt = true
+[mergetool "meld"]
+    trustExitCode = true
+      cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+[color]
+	ui = auto
