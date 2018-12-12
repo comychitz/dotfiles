@@ -1,12 +1,12 @@
 # main()
 snippet main
-	int main( int argc, const char *argv[] )
+	int main(int argc, const char *argv[])
 	{
 	  ${1}
 	  return 0;
 	}
 snippet mainn
-	int main( void )
+	int main(void)
 	{
 	  ${1}
 	  return 0;
@@ -62,23 +62,23 @@ snippet ternary
 snippet do
 	do {
 	  ${2:/* TODO*/}
-	} while( ${1:/* condition */} );
+	} while (${1:/* condition */});
 # While Loop
 snippet while
-	while( ${1:/* condition */} ) 
+	while (${1:/* condition */}) 
 	{
 	  ${2:/* TODO */}
 	}
 # For Loop
 snippet for
-	for( ${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
+	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
 	{
 	  ${4:/* TODO */}
 	}
 # For Loop with the i declaration above
 snippet fori
 	int i;
-	for( ${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
+	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
 	{
 	  ${4:/* TODO */}
 	}
@@ -90,7 +90,7 @@ snippet function
 	}
 # switch
 snippet switch
-	switch( ${1} ) 
+	switch (${1}) 
 	{
 	  case ${2}: 
 	    ${3}
@@ -124,13 +124,13 @@ snippet tde
 # unfortunately version this isn't as nice as TextMates's, given the lack of a
 # dynamic `...`
 snippet printf
-	printf( "${1:%s}\n"${2} );${3}
+	printf("${1:%s}\n"${2});${3}
 # my littel shortcut when i like to print out statements when debugging
 snippet phere
-	printf( "here${1}!\n" ); // TODO - delete me!
+	printf("here${1}!\n"); // TODO - delete me!
 # fprintf (again, this isn't as nice as TextMate's version, but it works)
 snippet fprintf
-	fprintf( ${1:stderr}, "${2:%s}\n"${3} );${4}
+	fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
 # This is kind of convenient
 snippet .
 	[${1}]${2}
