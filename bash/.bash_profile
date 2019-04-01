@@ -10,8 +10,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias clean='rm -f *.*~ .*~ ' # because i hate ~ at the end of files
 alias cleanDiskImage='sudo rm /private/var/vm/sleepimage' # os x
+alias vim='vim -O'
 
-set -o vi # vim > emacs (until i convert)
+set -o emacs
 
 cd ~/Desktop/
 ll
